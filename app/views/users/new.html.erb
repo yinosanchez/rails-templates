@@ -1,5 +1,12 @@
 <h1>Sign Up</h1>
-<%= form_for @user do |f| %>
+<%= form_with model: @user do |f| %>
+    <% if @user.errors.size > 0 %>
+        <ul>
+            <% @user.errors.full_messages.each do |field, error| %>
+                <li><%= "#{field}: #{error}" %></li>
+            <% end %>
+        </ul>
+    <% end %>
     <%= f.label :username %><br />
     <%= f.text_field :username %><br />
     <%= f.label :email %><br />
@@ -7,6 +14,6 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %><br />
     <%= f.label :confirm_password %><br />
-    <%= f.password_field :confirm_password %><br />
+    <%= f.password_field :password_confirmation %><br />
     <%= f.submit %>
 <% end %>
