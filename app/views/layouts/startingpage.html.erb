@@ -16,22 +16,14 @@
       </div>
     <% end %>
     <div class="container">
-      <div id="header" class="row">
-        <h1>Familia Sánchez de la Fuente</h1>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <%= yield %>
+        <div class="logo">
+            <%= image_tag "familyLogo.png" %>
         </div>
-        <div class="col-md-4">
-        <% if logged_in? %>
-          <% if controller_name!='users'%>
-            <%= button_to 'Create User', '/users/new', method: :get, class: 'btn btn-default' %>
-          <% end %>
-          <%= button_to 'Logout', '/logout', method: :get, class: 'btn btn-warning' %>
-        <% end %>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <%= yield %>
+            </div>
         </div>
-      </div>
     </div>
   </body>
 </html>

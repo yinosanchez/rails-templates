@@ -1,5 +1,7 @@
 class SessionController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :welcome]
+  layout 'startingpage', only: [:login, :new]
+
   def new
   end
 

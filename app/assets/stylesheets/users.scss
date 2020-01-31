@@ -1,3 +1,16 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.left-form{
+    text-align: left
+}
+
+.left-form label{
+    width: 9em
+}
+
+.left-form input[type=submit]{
+    text-align: left;
+    margin-left: 0em;
+    display: block
+}

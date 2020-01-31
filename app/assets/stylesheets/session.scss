@@ -1,3 +1,23 @@
 // Place all the styles related to the session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.logo{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: 2em;
+}
+
+form{
+    text-align: center;
+}
+
+form input[type=submit]{
+    display: block;
+    margin: 0 auto;
+}
+
+.button_to{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
