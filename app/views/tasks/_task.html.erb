@@ -1,0 +1,4 @@
+<%= check_box_tag "task-done-#{task.id}", task.id, task.done %>
+<span class="task-user"><%= "#{task.username}" %></span>
+<span class="task-title"><%= "#{task.title}:" %></span>
+<span class="task-description <%= "done-#{task.done}" %>"><%= "#{task.description}" %></span>

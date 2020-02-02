@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'tasks/index', to: 'tasks#index'
   get 'tasks/new', to: 'tasks#new'
   post 'tasks/new', to: 'tasks#create'
-  get 'tasks/toggle/:id', to: 'tasks#toggle'
+  post 'tasks/toggle/:id', to: 'tasks#toggle'
   resources :users, only: [:new, :create]
 
   get 'login', to: 'session#new'

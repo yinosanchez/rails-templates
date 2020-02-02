@@ -1,0 +1,16 @@
+<%= form_with model: @task, class: "task-form" do |f|%>
+    <div class="form-group row">
+        <%= f.label :title, class: 'col-md-2' %>
+        <%= f.text_field :title, class: 'col-md-6' %><br />
+    </div>
+    <div class="form-group row">
+        <%= f.label :description, class: 'col-md-2' %>
+        <%= f.text_field :description, class: 'col-md-6' %><br />
+    </div>
+    <div class="form-group row">
+        <%= f.label "Assignee", class: 'col-md-2' %>
+        <%= f.select :user, @users.map {|u| [u.username, u.id]}, {}, {class: 'col-md-6'} %>
+    </div>
+    <br />
+    <%= f.submit class: 'btn btn-default' %>
+<% end %>

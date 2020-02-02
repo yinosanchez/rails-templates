@@ -28,6 +28,9 @@
           <% if controller_name!='users'%>
             <%= button_to 'Create User', '/users/new', method: :get, class: 'btn btn-default' %>
           <% end %>
+          <% if controller_name!='tasks'%>
+            <%= button_to 'List Tasks', '/tasks/index', method: :get, class: 'btn btn-default' %>
+          <% end %>
           <%= button_to 'Logout', '/logout', method: :get, class: 'btn btn-warning' %>
         <% end %>
         </div>

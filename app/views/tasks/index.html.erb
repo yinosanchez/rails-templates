@@ -1,0 +1,12 @@
+<% if @tasks.size > 0%>
+    <ul class="task-list">
+        <% @tasks.each do |task| %>
+            <li id="<%= "task-#{task.id}" %>" class="task-item">
+                <%= render partial: "task", locals: {task: task}%>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>Make some tasks</p>
+<% end %>
+<%= button_to 'Make task', '/tasks/new', method: :get %>
