@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   get 'tasks/index', to: 'tasks#index'
+  post 'tasks/index', to: 'tasks#create'
   get 'tasks/new', to: 'tasks#new'
   post 'tasks/new', to: 'tasks#create'
   post 'tasks/toggle/:id', to: 'tasks#toggle'
+  post 'tasks/destroy/:id', to: 'tasks#destroy'
   resources :users, only: [:new, :create]
 
   get 'login', to: 'session#new'

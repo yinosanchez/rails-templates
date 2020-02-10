@@ -10,3 +10,7 @@
     <p>Make some tasks</p>
 <% end %>
 <%= button_to 'Make task', '/tasks/new', method: :get %>
+
+<% content_for :sideboard do %>
+    <%= render partial: "form", locals: {users: @users}%>
+<% end %>

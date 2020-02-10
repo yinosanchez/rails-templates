@@ -25,6 +25,7 @@
         </div>
         <div class="col-md-4">
         <% if logged_in? %>
+          <%= yield :sideboard %>
           <% if controller_name!='users'%>
             <%= button_to 'Create User', '/users/new', method: :get, class: 'btn btn-default' %>
           <% end %>

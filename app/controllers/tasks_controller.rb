@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+    @users = User.all
   end
 
   def new
@@ -8,7 +9,6 @@ class TasksController < ApplicationController
   end
 
   def create
-    puts params
     @task = Task.new(params.permit(:title, :description, :user))
     @task.done = false
     if @task.save
@@ -21,7 +21,6 @@ class TasksController < ApplicationController
 
   def toggle
     @task = Task.find_by id: params[:id]
-    puts @task.title + @task.description + @task.done.to_s
     if @task.done
       @task.done = false
     else
@@ -29,5 +28,11 @@ class TasksController < ApplicationController
     end
     @task.save
     render partial: 'task', layout: false, locals: {task: @task}
+  end
+
+  def destroy
+    @task = Task.find_by id: params[:id]
+    @task.destroy
+    render json: @task
   end
 end

@@ -1,0 +1,32 @@
+<%= form_with model: @task, local: true, url:'/tasks/new', class: "task-form" do |f|%>
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <%= f.label :title, class: "col-md-4" %>
+            </div>
+            <div class="row">
+                <%= f.text_field :title, class: "col-md-4" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <%= f.label :description, class: "col-md-4" %>
+            </div>
+            <div class="row">
+                <%= f.text_area :description, class: "col-md-4" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <%= f.label "Assignee", class: "col-md-4" %>
+            </div>
+            <div class="row">
+                <%= f.select :user, @users.map {|u| [u.username, u.id]}, {}, {class: "col-md-4"} %>
+            </div> 
+        </div>
+        <br />
+        <div class="form-group row">
+            <%= f.submit class: 'btn btn-default col-md-4' %>
+        </div>
+    </div>
+<% end %>

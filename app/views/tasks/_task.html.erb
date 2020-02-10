@@ -1,4 +1,11 @@
-<%= check_box_tag "task-done-#{task.id}", task.id, task.done %>
-<span class="task-user"><%= "#{task.username}" %></span>
-<span class="task-title"><%= "#{task.title}:" %></span>
-<span class="task-description <%= "done-#{task.done}" %>"><%= "#{task.description}" %></span>
+<div class="panel <%= task.done ? 'panel-info' : 'panel-warning' %>">
+    <div class="panel-heading">
+        <span class="task-user"><%= "#{task.username}:" %></span> <span class="task-title"><%= "#{task.title}" %></span>
+        <%= link_to 'Eliminar','/tasks/destroy/'+task.id.to_s, class: 'task-destroy', id: "task-destroy-#{task.id}" %>
+    </div>
+    <div class="panel-body">
+        <%= check_box_tag "task-done-#{task.id}", task.id, task.done %>
+        <span class="task-description <%= "done-#{task.done}" %>"><%= "#{task.description}" %></span>
+        
+    </div>
+</div>
